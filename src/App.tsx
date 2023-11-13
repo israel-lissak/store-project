@@ -2,9 +2,12 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
-import Product from './pages/Product';
-import Category from './pages/Category';
-import Home from './pages/Home';
+import Product from './components/Product';
+import Category from './components/Category';
+import Home from './components/Home';
+import SignInSide from './components/SignIn';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
 function App() {
 
@@ -17,6 +20,11 @@ function App() {
         <a href="/category">cagegory</a>
       |
         <a href="/product">product</a>
+      |
+        <a href="/sign in">Sign In</a>
+      |
+      <a href="/sign Up">Sign Up</a>
+
      </nav>
 
      <h1>welcome to our store</h1>
@@ -26,6 +34,11 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/home" element={<Home />} />
           <Route path="/category" element={<Category />} />
+          <Route path="/sign in" element={<SignIn/>} />
+          <Route path="/sign Up" element={<SignUp/>} />
+
+
+
         </Routes>
       </BrowserRouter>
 
