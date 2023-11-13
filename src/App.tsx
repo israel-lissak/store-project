@@ -5,9 +5,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Product from './components/Product';
 import Category from './components/Category';
 import Home from './components/Home';
-import SignInSide from './components/SignIn';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import TopCat from './components/TopCat';
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
     <>
      <nav>
         <a href="/home">Home</a>
+      |
+      <a href="/TopCat">Home</a>
       |
         <a href="/category">cagegory</a>
       |
@@ -36,6 +38,8 @@ function App() {
           <Route path="/category" element={<Category />} />
           <Route path="/sign in" element={<SignIn/>} />
           <Route path="/sign Up" element={<SignUp/>} />
+          <Route path="/TopCat" element={<TopCat/>} />
+
 
 
 
