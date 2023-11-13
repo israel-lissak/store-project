@@ -14,7 +14,11 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.17",
+<<<<<<< HEAD
     "@mui/styled-engine-sc": "^6.0.0-alpha.5",
+=======
+    "mongodb": "^6.2.0",
+>>>>>>> 53cc26c4bc0ef3aeff817d594addfd61586645ec
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.1"

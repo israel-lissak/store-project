@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 function ShoppingCart() {
-    localStorage.setItem('Cart', JSON.stringify([{id:0, title:'rytr', price:97, quantity:3}, {id:1, title:'fytt', price:67, quantity:34}, {id:2, title:'gftyfh', price:67, quantity:5}]))
+    // localStorage.setItem('Cart', JSON.stringify([{id:0, title:'rytr', price:97, quantity:3}, {id:1, title:'fytt', price:67, quantity:34}, {id:2, title:'gftyfh', price:67, quantity:5}]))
   const [cartData, setCartData] = useState(
     JSON.parse(localStorage.getItem('Cart')) || []
   );

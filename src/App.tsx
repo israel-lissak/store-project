@@ -10,7 +10,6 @@ function App() {
   return (
 
     <>
-    <header style={{position:'sticky', top:0}}>
      <nav>
         <a href="/home">Home</a>
       |
@@ -18,17 +17,17 @@ function App() {
       |
         <a href="/product">product</a>
       |
-        <a href='y'>shopping</a>
+        <a href='/cart'>store</a>
      </nav>
 
      <h1>welcome to our store</h1>
-     </header>
+
       <BrowserRouter>
         <Routes>
           <Route path="/product" element={<Product />} />
           <Route path="/home" element={<Home />} />
           <Route path="/category" element={<Category />} />
-          <Route path='/y' element={<ShoppingCart/>} />
+          <Route path='/cart' element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
 
