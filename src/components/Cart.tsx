@@ -17,8 +17,7 @@ function ShoppingCart() {
     cart = await fromProductIDToListOfProducts(arrOfProducts);
   }else {
     const arrOfProducts = localStorage.getItem('cart')
-    // cart = await fromProductIDToListOfProducts(arrOfProducts)
-      cart = arrOfProducts
+    cart = await fromProductIDToListOfProducts(arrOfProducts)
       console.log(cart);
       console.log(3);
   }
@@ -102,6 +101,7 @@ function ShoppingCart() {
 
   return (
     <div>
+      fgfgf
       <table>
         <thead>
           <tr>
