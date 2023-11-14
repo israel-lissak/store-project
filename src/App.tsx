@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Product from './pages/Product';
 import Category from './pages/Category';
 import Home from './pages/Home';
-import ShoppingCart from './pages/Cart';
+
 function App() {
   
   return (
@@ -13,11 +13,11 @@ function App() {
      <nav>
         <a href="/home">Home</a>
       |
+      <a href="/TopCat">Home</a>
+      |
         <a href="/category">cagegory</a>
       |
         <a href="/product">product</a>
-      |
-        <a href='/cart'>store</a>
      </nav>
 
      <h1>welcome to our store</h1>
@@ -27,7 +27,6 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/home" element={<Home />} />
           <Route path="/category" element={<Category />} />
-          <Route path='/cart' element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
 
