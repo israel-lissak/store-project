@@ -1,25 +1,24 @@
 import { useState, useEffect } from 'react';
 
 function ShoppingCart() {
-    // localStorage.setItem('Cart', JSON.stringify([{id:0, title:'rytr', price:97, quantity:3}, {id:1, title:'fytt', price:67, quantity:34}, {id:2, title:'gftyfh', price:67, quantity:5}]))
   const [cartData, setCartData] = useState(
-    JSON.parse(localStorage.getItem('Cart')) || []
+    JSON.parse(localStorage.getItem('cart')) || []
   );
 
-  const updateQuantity = (productId, newQuantity) => {
+  const updateQuantity = (productId:string, newQuantity:number) => {
     console.log(productId);
     const updatedCart = cartData.map((item) => {
       if (item.id === productId) {
         return { ...item, quantity: newQuantity };
       }
       return item;
-    }).filter((item) => item.quantity > 0); // Remove items with quantity zero.
+    }).filter((item) => item.quantity > 0); 
     setCartData(updatedCart);
-    localStorage.setItem('Cart', JSON.stringify(updatedCart));
-    console.log(localStorage.getItem('Cart'));
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    console.log(localStorage.getItem('cart'));
   };
 
-  const removeItem = (productId) => {
+  const removeItem = (productId:string) => {
     console.log(productId);
     const updatedCart = cartData.filter((item)=>
         item.id !== productId
@@ -29,8 +28,8 @@ function ShoppingCart() {
 
   const clearCart = () => {
     setCartData([]);
-    localStorage.setItem('Cart', cartData)
-    console.log(localStorage.getItem('Cart'));
+    localStorage.setItem('cart', cartData)
+    console.log(localStorage.getItem('cart'));
   };
   const buy = ()=>{
     //לשנות בתוך הדאטה בייס
@@ -42,7 +41,7 @@ function ShoppingCart() {
   };
 
   useEffect(() => {
-    localStorage.setItem('Cart', JSON.stringify(cartData));
+    localStorage.setItem('cart', JSON.stringify(cartData));
   }, [cartData]);
 
   return (

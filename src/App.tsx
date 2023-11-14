@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Product from './pages/AddToLocalStorage';
 import Category from './pages/Category';
 import Home from './pages/Home';
-import ShoppingCart from './Cart';
+import ShoppingCart from './pages/Cart';
 function App() {
   
   return (
