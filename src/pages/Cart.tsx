@@ -1,9 +1,27 @@
 import { useState, useEffect } from 'react';
 
 function ShoppingCart() {
+  localStorage.setItem('cart', undefined)
   const [cartData, setCartData] = useState(
     JSON.parse(localStorage.getItem('cart')) || []
   );
+  if(!cartData.length){
+    console.log(45);
+    setCartData(
+      localStorage.setItem(
+        'cart', JSON.stringify(
+          [
+            {
+              id:'no id',
+              name:'the cart is empty',
+              price:0,
+              quantity:0
+            }
+          ]
+        )
+      )
+    )
+  };
 
   const updateQuantity = (productId:string, newQuantity:number) => {
     console.log(productId);
@@ -12,7 +30,7 @@ function ShoppingCart() {
         return { ...item, quantity: newQuantity };
       }
       return item;
-    }).filter((item) => item.quantity > 0); 
+    }).filter((item) => item.quantity > 0); // Remove items with quantity zero.
     setCartData(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     console.log(localStorage.getItem('cart'));
@@ -24,18 +42,27 @@ function ShoppingCart() {
         item.id !== productId
     )
     setCartData(updatedCart);
+    localStorage.setItem('cart', updatedCart)
+    console.log(localStorage.getItem('cart'));
   };
 
   const clearCart = () => {
-    setCartData([]);
-    localStorage.setItem('cart', cartData)
+    setCartData([{
+      id:'no id',
+      name:'the cart is empty',
+      price:0,
+      quantity:0
+    }]);
+    localStorage.setItem('cart', cartData);
     console.log(localStorage.getItem('cart'));
   };
+
   const buy = ()=>{
     //לשנות בתוך הדאטה בייס
     console.log('mean time dont work, delete the cart in the local storge');
     clearCart()
   };
+  
   const calculateTotal = () => {
     return cartData.reduce((total, item) => total + item.price * item.quantity, 0);
   };
@@ -59,7 +86,7 @@ function ShoppingCart() {
         <tbody>
           {cartData.map((item) => (
             <tr key={item.id}>
-              <td>{item.name}</td>
+              <td><h4>{item.name}</h4></td>
               <td>${item.price.toFixed(2)}</td>
               <td>
                 <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>

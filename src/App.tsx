@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import Product from './pages/AddToLocalStorage';
+import Product from './pages/Product';
 import Category from './pages/Category';
 import Home from './pages/Home';
 import ShoppingCart from './pages/Cart';
@@ -24,7 +24,7 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/home" element={<Home />} />
           <Route path="/category" element={<Category />} />
           <Route path='/cart' element={<ShoppingCart />} />
